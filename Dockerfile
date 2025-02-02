@@ -2,7 +2,7 @@ FROM php:8.3-fpm
 
 # Install required libs and configure php
 RUN apt update && apt install -y git libicu-dev g++ libpcre3-dev libzip-dev zip lsof \
-    libpq-dev libpng-dev librabbitmq-dev libxslt-dev nano postgresql-client graphviz \
+    libpq-dev libpng-dev libxslt-dev nano postgresql-client graphviz \
     net-tools iputils-ping htop procps \
     && docker-php-ext-install -j$(nproc) gd xsl opcache pdo_pgsql zip intl pcntl \
     && pecl install xdebug-3.3.2 \
